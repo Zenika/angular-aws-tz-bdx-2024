@@ -1,8 +1,8 @@
 <style>
 </style>
 
+<h1>Zeniws</h1>
 <main class="main">
-  <h1>Zeniws</h1>
   @for (url of (images$ | async); track url) {
   <img src="{{url}}">
   }
