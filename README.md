@@ -1,5 +1,13 @@
 # AwsNgFront
 
+Le backend sera appelé via l'url renseigné dans le fichier `environnment.js`.
+Elle peut-être surchargée via la Variable d'environnement `BACKEND`
+
+Pour lancer l'appli:  `npm start`
+
+-------
+
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.0.2.
 
 ## Development server
