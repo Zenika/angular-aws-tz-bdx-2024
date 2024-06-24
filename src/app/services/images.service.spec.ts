@@ -25,7 +25,7 @@ describe('ImagesService', () => {
   });
 
   it('should call the url', async () => {
-    service.images.subscribe((result) => {
+    service.games.subscribe((result) => {
       expect(result).toEqual(['https://unsplash.com/photos/yC-Yzbqy7PY']);
     });
 
@@ -33,18 +33,17 @@ describe('ImagesService', () => {
     mockRequest.flush([
       {
         id: '0',
-        author: 'Alejandro Escamilla',
-        width: 5000,
-        height: 3333,
-        url: 'https://unsplash.com/photos/yC-Yzbqy7PY',
-        download_url: 'https://picsum.photos/id/0/5000/3333',
+        title: 'Space foot',
+        desc: 'Nice game',
+        nb_players: 2,
+        jacket_path: 'https://picsum.photos/id/0/5000/3333',
       },
     ]);
   });
 
   describe('when the url is not reachable', () => {
     it('should throw an error', (done) => {
-      service.images
+      service.games
       .pipe(catchError((err: any): any => {
         expect(err).toBeInstanceOf(Error);
         expect(err.message).toEqual('Missing url');

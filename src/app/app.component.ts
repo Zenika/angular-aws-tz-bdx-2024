@@ -3,6 +3,7 @@ import { AsyncPipe } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { ImagesService } from './services/images.service';
 import { Observable } from 'rxjs';
+import { Game } from './services/images.type';
 
 @Component({
   selector: 'app-root',
@@ -14,10 +15,10 @@ import { Observable } from 'rxjs';
 })
 export class AppComponent {
   title = 'aws-ng-front';
-  public images$: Observable<Array<String>>
+  public games$: Observable<Array<Game>>
 
   constructor(public imageService: ImagesService){
-    this.images$ = imageService.images
+    this.games$ = imageService.games
 
   }
 }

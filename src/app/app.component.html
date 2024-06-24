@@ -3,8 +3,8 @@
 
 <h1>Zeniws</h1>
 <main class="main">
-  @for (url of (images$ | async); track url) {
-  <img src="{{url}}">
+  @for (game of (games$ | async); track game.jacket_path) {
+  <img src="{{game.jacket_path}}">
   }
 </main>
 
