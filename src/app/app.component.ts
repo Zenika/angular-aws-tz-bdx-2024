@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { AsyncPipe } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { ImagesService } from './services/images.service';
-import { Observable } from 'rxjs';
+import { Observable, map, tap } from 'rxjs';
 import { Game } from './services/images.type';
 
 @Component({
@@ -18,7 +18,6 @@ export class AppComponent {
   public games$: Observable<Array<Game>>
 
   constructor(public imageService: ImagesService){
-    this.games$ = imageService.games
-
+    this.games$ = imageService.games;
   }
 }
