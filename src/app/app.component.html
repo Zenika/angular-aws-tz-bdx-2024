@@ -1,14 +1,6 @@
 <h1>Zeniboard game manager</h1>
 <main class="main">
-  <ul>
-  @for (game of (games$ | async); track game.jacket_path) {
-  <li>
-    <img src="{{game.jacket_path}}">
-    <h2>{{game.title}}</h2>
-    <span> [👤{{game.nb_players}}] {{game.desc}}</span>
-  </li>
-  }
-</ul>
+
 </main>
 
-<router-outlet />
+<router-outlet></router-outlet>

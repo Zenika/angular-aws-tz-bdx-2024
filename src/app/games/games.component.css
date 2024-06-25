@@ -1,0 +1,13 @@
+ul {
+  list-style: none;
+  display: flex;
+  flex-flow: row wrap;
+  column-gap: 1em;
+  row-gap: 2em;
+  align-items: center;
+  justify-content: center;
+
+  li {
+    width: 30%;
+  }
+}

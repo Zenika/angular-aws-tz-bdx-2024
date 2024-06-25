@@ -21,7 +21,7 @@ export class AppComponent {
     this.games$ = imageService.games.pipe(
       catchError((err) => {
         router.navigate(['/404']);
-        return throwError(() => new Error('Could not find matching products. Redirecting...'))
+        return throwError(() => new Error('Could not find matching dynamic products. Redirecting...'))
       })
     );
   }

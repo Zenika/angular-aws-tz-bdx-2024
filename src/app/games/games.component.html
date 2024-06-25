@@ -1,0 +1,9 @@
+<ul>
+  @for (game of (games$ | async); track game.jacket_path) {
+  <li>
+    <img src="{{game.jacket_path}}">
+    <h3>{{game.title}}</h3>
+    <span> [👤{{game.nb_players}}] {{game.desc}}</span>
+  </li>
+  }
+</ul>

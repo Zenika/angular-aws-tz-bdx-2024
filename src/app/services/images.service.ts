@@ -10,12 +10,21 @@ import { environment } from '../../environments/environment';
 export class ImagesService {
   constructor(private http: HttpClient) {}
 
-  get games(): Observable<Array<Game>> {
-    console.log({ backend: environment.backend });
-    return this.http.get<Array<Game>>(environment.backend).pipe(
-      catchError((err: any): ObservableInput<any> => {
+  get staticGames(): Observable<Array<Game>> {
+    return this.#games(`${environment.backend}/static`)
+  }
+  get dynamicGames(): Observable<Array<Game>> {
+    return this.#games(environment.backend)
+  }
+
+
+  #games(url: string): Observable<Array<Game>> {
+    return this.http.get<Array<Game>>(url).pipe(
+      catchError((err: any): ObservableInput<Array<Game>> => {
         console.log({ err });
         throw new Error('Error just occured retrieving data');
+
+
       }),
     );
   }
