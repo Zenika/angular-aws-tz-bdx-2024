@@ -2,9 +2,14 @@
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
-h1 {
+nav {
+  padding-bottom: 1em;
   border-bottom: 3px solid darkgrey;
   margin-bottom: 2em;
+}
+
+.activebutton{
+  font-weight: bold;
 }
 
 

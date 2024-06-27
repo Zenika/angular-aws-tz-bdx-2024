@@ -1,6 +1,19 @@
 <h1>Zeniboard game manager</h1>
 <main class="main">
-
+  <nav>
+    <a class="button"
+       routerLink="/static"
+       routerLinkActive="activebutton"
+       ariaCurrentWhenActive="page">
+      Static data
+    </a> |
+    <a class="button"
+       routerLink="/dynamic"
+       routerLinkActive="activebutton"
+       ariaCurrentWhenActive="page">
+      Dynamic data
+    </a>
+  </nav>
 </main>
 
 <router-outlet></router-outlet>
