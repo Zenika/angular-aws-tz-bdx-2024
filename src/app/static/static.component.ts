@@ -15,12 +15,14 @@ import { GamesComponent } from '../games/games.component';
   providers: [ImagesService],
 })
 export class StaticComponent {
-  public games$: Observable<Array<Game>>;
+  protected games$: Observable<Array<Game>>;
+  protected backend: string;
 
   constructor(
     public imageService: ImagesService,
     router: Router,
   ) {
+    this.backend = imageService.staticUrl;
     this.games$ = imageService.staticGames.pipe(
       catchError((err) => {
         router.navigate(['/404']);

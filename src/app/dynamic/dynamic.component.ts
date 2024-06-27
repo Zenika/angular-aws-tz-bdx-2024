@@ -16,9 +16,12 @@ import { GamesComponent } from '../games/games.component';
 
 })
 export class DynamicComponent {
-  public games$: Observable<Array<Game>>
+  protected games$: Observable<Array<Game>>
+  public backend!: string;
+
 
   constructor(public imageService: ImagesService, private router: Router){
+    this.backend = imageService.dynamicUrl;
     this.games$ = imageService.dynamicGames.pipe(
       catchError((err) => {
         router.navigate(['/404']);
